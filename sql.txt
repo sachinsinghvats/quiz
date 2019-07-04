@@ -1,0 +1,26 @@
+--DDL
+CREATE TABLE quiz(id number, name varchar(50));  
+CREATE TABLE question(id number, questiontype number, description varchar(2048),  difficulty number, topic number, quiz number);
+CREATE TABLE mcqquestiontype(id number, questionid number,  option1 varchar (512), option2 varchar (512), option3 varchar (512), option4 varchar (512), correctanswer number);
+CREATE TABLE topic(id number, name varchar(50));  
+CREATE TABLE difficulty(id number, name varchar(50));  
+CREATE TABLE user(id number, name varchar(50),  password varchar(50)); 
+CREATE TABLE questiontype(id number, Type varchar(50));
+
+CREATE SEQUENCE Quiz_SEQ_ID; 
+CREATE SEQUENCE Question_SEQ_ID; 
+CREATE SEQUENCE mcqquestiontype_SEQ_ID; 
+CREATE SEQUENCE topic_SEQ_ID; 
+CREATE SEQUENCE user_SEQ_ID;
+
+--DML
+insert into user values (user_SEQ_ID.nextval, 'admin', 'admin');
+insert into difficulty values (1, 'Easy');
+insert into difficulty values (2, 'Medium');
+insert into difficulty values (3, 'Hard');
+insert into questiontype values (1, 'MCQ');
+insert into questiontype values (2, 'OPEN');
+
+
+
+
